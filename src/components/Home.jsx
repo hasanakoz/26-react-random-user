@@ -8,19 +8,19 @@ const Home = () => {
 
   const getData = async () => {
     const { data } = await axios(url);
-    console.log(data.results);
     setUser(data.results);
   };
   useEffect(() => {
     getData();
   }, []);
-  //   console.log(data.results);
   return (
     <>
       <div>
         <Card user={user} />
       </div>
-      <button onClick={() => getData()}> Random User</button>
+      <div className="button">
+        <button onClick={() => getData()}> Random User</button>
+      </div>
     </>
   );
 };
